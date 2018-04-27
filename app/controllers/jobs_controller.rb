@@ -61,6 +61,10 @@ class JobsController < ApplicationController
     end
   end
 
+  def premium
+    @jobs = Job.where(premium: true).all
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_job
@@ -71,4 +75,5 @@ class JobsController < ApplicationController
     def job_params
       params.require(:job).permit(:title, :description, :premium)
     end
+    
 end
