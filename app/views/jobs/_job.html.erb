@@ -1,12 +1,11 @@
 
-  <h3><%= job.title.upcase %>
-    <% if job.premium %>
-    <strong> - premium</strong>
-    <% end %>
-  </h3>
+<h3><%= job_title(job) %></h3>  
 
 <%= job.description %>
-
-<%= link_to 'Show', job %> |
-<%= link_to 'Edit', edit_job_path(job) %> |
-<%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
+<p>
+  <%= pluralize(job.comments.size, "comment")%>
+  <%= link_to 'Show', job %> |
+  <%= link_to 'Edit', edit_job_path(job) %> |
+  <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
+<br>
