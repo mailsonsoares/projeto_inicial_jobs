@@ -1,0 +1,15 @@
+<%= form_for [@job , Comment.new] do |f| %>
+    <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name, class:"form-control" %>
+    </div>
+    <div class="field">
+        <%= f.label :body %>
+        <%= f.text_area :body, class:"form-control", rows:4 %>
+    </div> 
+    <div class = "actions">
+        <%= f.button class:"btn btn-default" do %>
+        Send <i class="glyphicon glyphicon-ok"></i> 
+        <%end%>
+    </div>   
+<% end %>
