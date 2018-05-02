@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>All Jobs</h1>
+<h1>All Jobs</h1><br><br>
 <%= render @jobs %>
-<br><br>
+<%= will_paginate @jobs %>
+<br>
 <%= link_to 'New Job', new_job_path %><br><br>
 <%= link_to 'Premium Jobs', root_path %><br><br>
 <%= link_to 'Hello World', hello_world_path %><br><br>
